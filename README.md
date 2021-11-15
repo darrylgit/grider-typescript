@@ -1,3 +1,3 @@
 # grider-typescript
 
-[This course](git@github.com:DanielJWagener/grider-typescript.git)
+This is a repository of the code I write while going through [this course](https://www.udemy.com/course/typescript-the-complete-developers-guide/)

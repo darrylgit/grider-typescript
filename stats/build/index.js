@@ -10,4 +10,9 @@ var matches = fs_1.default
 })
     .split('\n')
     .map(function (row) { return row.split(','); });
-console.log(matches);
+var manWins = matches.reduce(function (winCount, row) {
+    return (row[1] === 'Man United' && row[5] === 'H') || (row[2] === 'Man United' && row[5] === 'A')
+        ? winCount + 1
+        : winCount;
+}, 0);
+console.log("Man United won " + manWins + " games.");

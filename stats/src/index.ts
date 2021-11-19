@@ -7,9 +7,16 @@ const matches = fs
   .split('\n')
   .map((row: string): string[] => row.split(','));
 
+enum MatchResult {
+  HomeWin = 'H',
+  AwayWin = 'A',
+  Draw = 'D'
+}
+
 let manWins: number = matches.reduce(
   (winCount: number, row: string[]): number =>
-    (row[1] === 'Man United' && row[5] === 'H') || (row[2] === 'Man United' && row[5] === 'A')
+    (row[1] === 'Man United' && row[5] === MatchResult.HomeWin) ||
+    (row[2] === 'Man United' && row[5] === MatchResult.AwayWin)
       ? winCount + 1
       : winCount,
   0
